@@ -325,9 +325,11 @@
 
 			const familleClean = nettoyerNomFamille(familleActive);
 			// Chemin vers le fichier spécifique de la famille généré par Python
-			btnDownload.href = `https://raw.githubusercontent.com/imazale/Montigny_Bridge_Cours_PDF/main/donnes_bridge_${familleClean}.xlsx`;
+			
+			const fileName = `donnes_bridge_${familleClean}.xlsx`;
+			btnDownload.href = `https://raw.githubusercontent.com/imazale/Montigny_Bridge_Cours_PDF/main/${encodeURIComponent(fileName)}`;
+			btnDownload.style.display = "inline-flex";
 			btnDownload.download = `donnes_bridge_${familleClean}.xlsx`;
-			btnDownload.style.display = "inline-flex"; // Afficher le bouton
 
 		}
 
